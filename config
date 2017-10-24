@@ -100,7 +100,7 @@ set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
 set $workspace8 "8 "
-set $workspace9 "9 "
+set $workspace9 "9 "
 set $workspace10 "10 "
 
 # switch to workspace
@@ -130,6 +130,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="Google-chrome"] $workspace1
 assign [class="Thunar"] $workspace3
 assign [class="Atom"] $workspace4
+for_window [class="Google-chrome" instance="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki"] move to workspace $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
 new_window 1pixel
@@ -219,7 +220,10 @@ bindsym $mod+shift+x exec i3lock
 exec_always --no-startup-id compton
 exec_always --no-startup-id feh --bg-scale /home/sourav/Pictures/Wallpapers/wallpaper.jpg
 exec --no-startup-id google-chrome
+exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki
 exec --no-startup-id spotify
 exec --no-startup-id thunar
 exec --no-startup-id atom
 exec --no-startup-id nm-applet
+#exec --no-startup-id oneko
+#exec --no-startup-id espeak "Hello Mr Sharan"
