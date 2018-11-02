@@ -99,7 +99,7 @@ set $workspace4 "4 "
 set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
-set $workspace8 "8 "
+set $workspace8 "8 "
 set $workspace9 "9 "
 set $workspace10 "10 "
 
@@ -216,18 +216,23 @@ bindsym $mod+Shift+d exec sudo /usr/local/sbin/lcd_bright.sh d 10
 # i3lock
 bindsym $mod+shift+x exec i3lock -i /home/sourav/Pictures/Wallpapers/2.png
 
-#Lock Touchpad
+# Lock Touchpad
 bindsym $mod+p exec ~/bin/touch_toggle.sh 
+
+# Printscreen
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 
 #run on startup
 exec_always --no-startup-id compton
 exec_always --no-startup-id feh --bg-scale /home/sourav/Pictures/Wallpapers/4.png
 exec --no-startup-id google-chrome
+exec --no-startup-id i3-msg 'workspace $workspace8'; exec gnome-terminal -e 'cht.sh --shell'; bash
 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki
 exec --no-startup-id spotify
-#exec --no-startup-id thunar
-exec --no-startup-id atom
+exec --no-startup-id thunar
+exec --no-startup-id code
 exec --no-startup-id nm-applet
+exec --no-startup-id kupfer 
 exec --no-startup-id i3-msg 'workspace $workspace3'; exec gnome-terminal -e ranger; bash
 #exec --no-startup-id oneko
-#exec --no-startup-id espeak "Hello Mr Sharan" 
+#exec --no-startup-id espeak "Hello Mr Sharan"
